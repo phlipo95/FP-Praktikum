@@ -1,0 +1,522 @@
+\section{Auswertung}
+\label{sec:Auswertung}
+Im Folgenden wird das Saugvermögen für die Drehschieberpumpe und die Turbopumpe auf zwei Arten bestimmt. Als erstes wird das Saugvermögen $S$ aus der $p(t)$-Kurve bestimmt. Danach wird $S$ aus der Leckratenmessung bestimmt. \\
+Das Pirani-Messgerät hat nach den Herstellerangaben eine Messgenauigkeit von $20\,\%$ und die Heißkathode eine Messgenauigkeit von $10\,\%$ auf der linearen Skala \cite{V70}. Das Pirani-Messgerät wurde für die Messung in Verbindung mit der Drehschieberpumpe verwendet, also in einem Druckbereich von $10^{3}$\,mbar bis $10^{-2}$\,mbar. Die Heißkathode wird für die Turbopumpe in einem Druckbereich von $10^{-2}$\,mbar bis $10^{-5}$\,mbar verwendet. Im Folgenden wird darauf verzichtet den Fehler des Drucks in die Tabellen einzutragen. Desweiteren werden die linearen Regressionen anhand der Funktion
+\begin{align}
+  y = m\cdot x + b
+\end{align}
+durchgeführt.
+
+
+
+\subsection{Volumenberechnung}
+Wie in Kapitel \eqref{sec:Durchführung} erwähnt, werden für die beiden Versuchsteile unterschiedliche Bauteile zwischen den Pumpen und dem Lufttank verwendet. Dadurch verändert sich das Volumen des Versuchaufbaus. \\
+Die Bauteile sind aus Zylindern zusammengesetzt. Das Volumen eines Zylinders wird mit
+\begin{align} \label{eqn:VZ}
+  V_\text{Z} = \frac{\pi}{4} \cdot d^2 \cdot l
+\end{align}
+berechnet. Dabei entspricht $d$ dem Durchmesser und $l$ der Länge des Zylinders. Der Fehler des Volumens, kann mit
+\begin{align} \label{eqn:DVZ}
+  \Delta V_\text{Z} &= \sqrt{ \left(\frac{\partial V_\text{Z}}{\partial d}\right)^2 (\Delta d)^2 + \left(\frac{\partial V_\text{Z}}{\partial l}\right)^2 (\Delta l)^2 } \nonumber \\
+  &= \sqrt{ \left(\frac{\pi\,d\,l}{2}\right)^2 (\Delta d)^2 + \left(\frac{\pi\,d^2}{4}\right)^2 (\Delta l)^2 }
+\end{align}
+bestimmt werden. Im Folgenden werden die Volumen der einzelnen Bauteile aufgelistet und das Gesamtvolumen berechnet. Dazu werden die Volumen der Bauteile aufsummiert. Die Fehlerfortpflanzung für das Summieren der Volumen, wird im Folgenden mit
+\begin{align}
+  \Delta V_\text{Ges} = \sqrt{ \sum\limits_{i=1}^{n} (\Delta V_\text{i})^2 } = \sqrt{ (\Delta V_1)^2 + (\Delta V_2)^2 + \dots }
+\end{align}
+berechnet. In Tabelle \eqref{tab:Volumen} sind die Volumen der Bauteile aufgelistet die verwendet wurden.
+
+\begin{table}[H] % Volumen
+  \centering
+  \caption{Volumen der verwendeten Bauteile.}
+  \label{tab:Volumen}
+  \begin{tabular}{c|c|c|c|c|c|c|c|c}
+    Bauteil & $V$ / l & $\Delta V$ / l & $l$ / cm & $\Delta l$ / cm & $d$ / cm & $\Delta d$ / cm & $V_\text{ges}$ / l & $\Delta V_\text{ges}$ / l \\
+    \midrule
+    \multirow{4}{*}{Rezipient} & 8.9 & 0.8 & 49.1 & 0.5 & 15.2 & 0.7 & \multirow{4}{*}{9.2} & \multirow{4}{*}{0.8} \\
+    & 0.027 & 0.005 & 7.2 & 0.5 & 2.2 & 0.2 & \\
+    & 0.065 & 0.009 & 8.1 & 0.5 & 3.2 & 0.2 & \\
+    & 0.16 & 0.02 & 12.9 & 0.5 & 4.0 & 0.2 & \\
+    \hline
+    Schlauch & 0.5 & 0.1 & 39.0 & 0.5 & 3.9 & 0.5 & 0.5 & 0.1 \\
+    \hline
+    Nadelventil & 0.002 & 0.002 & 2.5 & 0.5 & 1.0 & 0.5 & 0.002 & 0.002 \\
+    \hline
+    Kugelventil & 0.015 & 0.009 & 7.4 & 0.5 & 1.6 & 0.5 & 0.015 & 0.009 \\
+    \hline
+    \multirow{2}{*}{T-Stück ($T_1$)} & 0.13 & 0.01 & 10.0 & 0.2 & 4.0 & 0.2 & \multirow{2}{*}{0.13} & \multirow{2}{*}{0.01} \\
+    & 0.002 & 0.0009 & 2.4 & 0.5 & 1.0 & 0.2 & \\
+    \hline
+    \multirow{2}{*}{T-Stück ($T_2$)} & 0.20 & 0.05 & 16.0 & 0.5 & 4.0 & 0.5 & \multirow{2}{*}{0.25} & \multirow{2}{*}{0.05} \\
+    & 0.05 & 0.02 & 4.5 & 0.5 & 3.9 & 0.5 & \\
+    \hline
+    \multirow{2}{*}{T-Stück ($T_3$)} & 0.011 & 0.003 & 8.0 & 0.2 & 1.3 & 0.2 & \multirow{2}{*}{0.014} & \multirow{2}{*}{0.004} \\
+    & 0.004 & 0.001 & 3.3 & 0.5 & 1.2 & 0.2 & \\
+    \hline
+    \multirow{2}{*}{T-Stück ($T_4$)} & 0.16 & 0.02 & 13.0 & 0.2 & 4.0 & 0.2 & \multirow{2}{*}{0.17} & \multirow{2}{*}{0.02} \\
+    & 0.005 & 0.002 & 2.5 & 0.5 & 1.6 & 0.2 & \\
+  \end{tabular}
+\end{table}
+
+\newpage
+\textbf{Drehschieberpumpe:} \\
+Aus Abbildung \eqref{fig:Dreh} kann entnommen werden um welche Bauteile es sich handelt. In Tabelle \eqref{tab:VD} sind die Volumen der Bauteile und das Gesamtvolumen aufgelistet.
+
+\begin{table}[H] % Volumen Drehschieberpumpe
+  \centering
+  \caption{Volumen der verwendeten Bauteile für die Drehschieberpumpe.}
+  \label{tab:VD}
+  \begin{tabular}{c|c|c|c}
+    \multicolumn{2}{c|}{Bauteil} & $V$ / l & $\Delta V$ / l \\
+    \midrule
+    1 & Rezipient & 9.2 & 0.8 \\
+    2 & Schlauch & 0.5 & 0.1 \\
+    3 & Nadelventil & 0.002 & 0.002 \\
+    4 & Kugelventil & 0.015 & 0.009 \\
+    5 & T-Stück ($T_1$) & 0.13 & 0.01 \\
+    6 & T-Stück ($T_4$) & 0.17 & 0.02 \\
+    7 & T-Stück ($T_3$) & 0.014 & 0.004 \\
+    8 & T-Stück ($T_2$) & 0.25 & 0.05 \\
+    9 & Kugelventil & 0.015 & 0.009 \\
+    \midrule
+    \multicolumn{2}{c|}{Gesamtvolumen $V_\text{Dreh}$} & 10.2 & 0.9 \\
+  \end{tabular}
+\end{table}
+
+\textbf{Turbopumpe:} \\
+Aus Abbildung \eqref{fig:Turbo} kann entnommen werden um welche Bauteile es sich handelt. In Tabelle \eqref{tab:VT} sind die Volumen der Bauteile und das Gesamtvolumen aufgelistet.
+
+\begin{table}[H] % Volumen Turbopumpe
+  \centering
+  \caption{Volumen der verwendeten Bauteile für die Turbopumpe.}
+  \label{tab:VT}
+  \begin{tabular}{c|c|c|c}
+    \multicolumn{2}{c|}{Bauteil} & $V$ / l & $\Delta V$ / l \\
+    \midrule
+    1 & Rezipient & 9.2 & 0.8 \\
+    2 & Schlauch & 0.5 & 0.1 \\
+    3 & Nadelventil & 0.002 & 0.002 \\
+    4 & Kugelventil & 0.015 & 0.009 \\
+    5 & T-Stück ($T_1$) & 0.13 & 0.01 \\
+    6 & T-Stück ($T_2$) & 0.25 & 0.05 \\
+    \midrule
+    \multicolumn{2}{c|}{Gesamtvolumen $V_\text{Turbo}$} & 10.0 & 0.9 \\
+  \end{tabular}
+\end{table}
+
+
+
+\subsection{Bestimmung des Saugvermögens aus der p(t)-Kurve}
+Im Folgenden wird das Saugvermögen $S$ aus der $p(t)$-Kurve bestimmt. Dazu wird Gleichung \eqref{eqn:Druck} nach $S$ umgestellt
+\begin{align}
+  S &= -\ln\left(\frac{p - p_\text{E}}{p_0 - p_\text{E}} \right) \cdot \frac{V_0}{t} \\
+  &= -m\cdot V_0
+\end{align}
+Wobei $m$ die Steigung der Geraden aus der $p(t)$-Kurve ist. Der Fehler des Saugvermögens $\Delta S$ wird mit
+\begin{align}
+  \Delta S &= \sqrt{ \left( \frac{\partial S}{\partial m} \right)^2 (\Delta m)^2 + \left( \frac{\partial S}{\partial V_0} \right)^2 (\Delta V_0)^2 } \nonumber \\
+  &= \sqrt{ (V_0 \cdot \Delta m)^2 + (m \cdot \Delta V_0)^2 }
+\end{align}
+bestimmt. Für die $p(t)$-Kurve wird $t$ gegen $y = \ln\left(\frac{p - p_\text{E}}{p_0 - p_\text{E}} \right)$ aufgetragen. \\
+Der Fehler von $y$ wird mit
+\begin{align}
+  \Delta y &= \sqrt{ \left(\frac{\partial y}{\partial p} \right)^2 (\Delta p)^2 + \left(\frac{\partial y}{\partial p_0} \right)^2 (\Delta p_0)^2 + \left(\frac{\partial y}{\partial p_\text{E}} \right)^2 (\Delta p_\text{E})^2 } \nonumber \\
+  &= \sqrt{ \left(\frac{1}{p_\text{E}-p} \right)^2 (\Delta p)^2 + \left(\frac{1}{p_0-p_\text{E}} \right)^2 (\Delta p_0)^2 + \left(\frac{(p_0-p)}{(p_\text{E}-p_0)(p_\text{E}-p)} \right)^2 (\Delta p_\text{E})^2 }
+\end{align}
+berechnet.
+
+
+
+\subsubsection{Für die Drehschieberpumpe}
+In Tabelle \eqref{tab:ptdreh} sind die Messwerte zur Bestimmung des Saugvermögens der Drehschieberpumpe aufgelistet. Diese Werte sind in Abbildung \eqref{fig:ptdreh} aufgetragen und in vier Abschnitte mit unterschiedlicher Steigung unterteilt. \\
+Der Anfangsdruck $p_0$ und der Enddruck $p_\text{E}$ sind für die Drehschieberpumpe gegeben als
+\begin{align*}
+  p_{0,\text{Dreh}} = (\num{1 +- 0.2})\cdot 10^3\ \text{mbar} \ , \\
+  p_{\text{E},\text{Dreh}} = (\num{2 +- 0.4})\cdot 10^{-2}\ \text{mbar} \ .
+\end{align*}
+
+\begin{table}[H] % p(t)-Kurve Drehschieberpumpe
+  \centering
+  \caption{Messwerte für die Bestimmung des Saugvermögens der Drehschieberpumpe.}
+  \label{tab:ptdreh}
+  \begin{tabular}{c|c|c|c|c|c|c|c|c|c}
+    $p$ / mbar & $t_1$ / s & $t_2$ / s & $t_3$ / s & $t_4$ / s & $t_5$ / s & $\overline{t}$ / s & $\Delta \overline{t}$ / s & $\ln\left( \frac{p-p_\text{E}}{p_0-p_\text{E}} \right)$ & $\Delta \ln\left( \frac{p-p_\text{E}}{p_0-p_\text{E}} \right)$ \\
+    \midrule
+    100  & 16  & 15  & 16  & 16  & 17  & 16.0  & 0.3 & -2.3  & 0.3 \\
+    60   & 25  & 26  & 26  & 26  & 27  & 26.0  & 0.3 & -2.8  & 0.3 \\
+    40   & 31  & 32  & 32  & 33  & 34  & 32.4  & 0.5 & -3.2  & 0.3 \\
+    \hline
+    20   & 39  & 39  & 40  & 41  & 41  & 40.0  & 0.4 & -3.9  & 0.3 \\
+    10   & 46  & 47  & 47  & 48  & 48  & 47.2  & 0.4 & -4.6  & 0.3 \\
+    8    & 49  & 49  & 49  & 50  & 51  & 49.6  & 0.4 & -4.8  & 0.3 \\
+    6    & 53  & 52  & 52  & 53  & 54  & 52.8  & 0.4 & -5.1  & 0.3 \\
+    4    & 57  & 56  & 57  & 57  & 58  & 57.0  & 0.4 & -5.5  & 0.3 \\
+    2    & 63  & 63  & 64  & 64  & 64  & 63.6  & 0.3 & -6.2  & 0.3 \\
+    \hline
+    1    & 70  & 70  & 71  & 71  & 72  & 70.8  & 0.2 & -6.9  & 0.3 \\
+    0.8  & 73  & 73  & 74  & 73  & 75  & 73.6  & 0.4 & -7.2  & 0.3 \\
+    0.6  & 77  & 77  & 77  & 79  & 79  & 77.8  & 0.4 & -7.5  & 0.3 \\
+    0.4  & 84  & 84  & 83  & 86  & 85  & 84.4  & 0.5 & -7.9  & 0.3 \\
+    0.2  & 96  & 96  & 97  & 97  & 98  & 96.8  & 0.4 & -8.6  & 0.3 \\
+    \hline
+    0.1  & 108 & 107 & 108 & 109 & 110 & 108.4 & 0.5 & -9.4  & 0.3 \\
+    0.08 & 114 & 114 & 113 & 114 & 115 & 114.0 & 0.3 & -9.7  & 0.3 \\
+    0.06 & 126 & 124 & 123 & 124 & 125 & 124.4 & 0.5 & -10.1 & 0.4 \\
+    0.04 & 165 & 150 & 152 & 154 & 155 & 155.0 & 3.0 & -10.8 & 0.5 \\
+  \end{tabular}
+\end{table}
+
+\begin{figure}[H] % p(t)-Kurve Drehschieberpumpe
+  \centering
+  \includegraphics[width=\textwidth]{pictures/pt-Kurve-Drehschieberpumpe.pdf}
+  \caption{Die p(t)-Kurve der Drehschieberpumpe.}
+  \label{fig:ptdreh}
+\end{figure}
+
+In Tabelle \eqref{tab:ptSaugDreh} sind die Parameter der Geraden aus der linearen Regression und das Saugvermögen aufgetragen.
+
+\begin{table}[H]
+  \centering
+  \caption{Das Saugvermögen der Drehschieberpumpe für die vier Messbereiche aus der p(t)-Kurve.}
+  \label{tab:ptSaugDreh}
+    \begin{tabular}{c|c|c|c|c|c|c}
+      Gerade & $m$ / $\frac{1}{\text{s}}$ & $\Delta m$ / $\frac{1}{\text{s}}$ & $b$ / $\frac{1}{\text{s}}$ & $\Delta b$ / $\frac{1}{\text{s}}$ & $S$ / $\frac{\text{l}}{\text{s}}$ & $\Delta S$ / $\frac{\text{l}}{\text{s}}$ \\
+      \midrule
+      1 & -0.055 & 0.003 & -1.42  & 0.08  & 0.57 & 0.06 \\
+      2 & -0.097 & 0.001 & -0.021 & 0.001 & 0.99 & 0.08 \\
+      3 & -0.064 & 0.002 & -2.417 & 0.002 & 0.66 & 0.06 \\
+      4 & -0.028 & 0.003 & -6.5   & 0.4   & 0.29 & 0.04 \\
+    \end{tabular}
+\end{table}
+
+
+
+\subsubsection{Für die Turbopumpe}
+In Tabelle \eqref{tab:ptturbo} sind die Messwerte zur Bestimmung des Saugvermögens der Turbopumpe aufgetragen. Diese Werte sind in Abbildung \eqref{fig:ptturbo} aufgelistet und in drei Abschnitte mit unterschiedlicher Steigung unterteilt. \\
+Der Anfangsdruck $p_0$ und der Enddruck $p_\text{E}$ sind für die Turbopumpe gegeben als
+\begin{align*}
+  p_{0,\text{Turbo}} = (\num{5 +- 0.5})\cdot 10^{-3}\ \text{mbar} \ , \\
+  p_{\text{E},\text{Turbo}} = (\num{2 +- 0.2})\cdot 10^{-5}\ \text{mbar} \ .
+\end{align*}
+
+\begin{table}[H] % p(t)-Kurve Turbopumpe
+  \caption{Messwerte für die Bestimmung des Saugvermögens der Turbopumpe.}
+  \label{tab:ptturbo}
+  \hspace{-2cm}
+  \begin{tabular}{c|c|c|c|c|c|c|c|c|c|c}
+    $p$ / $10^{-4}$ mbar & $t_1$ / s & $t_2$ / s & $t_3$ / s & $t_4$ / s & $t_5$ / s & $t_6$ / s & $\overline{t}$ / s & $\Delta \overline{t}$ / s & $\ln\left( \frac{p-p_\text{E}}{p_0-p_\text{E}} \right)$ & $\Delta \ln\left( \frac{p-p_\text{E}}{p_0-p_\text{E}} \right)$ \\
+    \midrule
+    20   & 0.8  & 0.9  & 0.4  & 0.3  & 0.4  & 0.4  & 0.5  & 0.1 & -0.9 & 0.1 \\
+    9    & 1.9  & 1.8  & 1.4  & 1.4  & 1.5  & 1.5  & 1.6  & 0.1 & -1.7 & 0.1 \\
+    8    & 2.1  & 2.0  & 1.5  & 1.5  & 1.7  & 1.6  & 1.7  & 0.1 & -1.9 & 0.1 \\
+    7    & 2.3  & 2.4  & 1.7  & 1.8  & 1.9  & 1.8  & 2.0  & 0.1 & -2.0 & 0.1 \\
+    6    & 2.6  & 2.6  & 2.0  & 2.0  & 2.2  & 2.1  & 2.3  & 0.1 & -2.1 & 0.1 \\
+    5    & 2.9  & 2.9  & 2.2  & 2.3  & 2.4  & 2.4  & 2.5  & 0.1 & -2.3 & 0.1 \\
+    4    & 3.3  & 3.2  & 2.7  & 2.7  & 2.8  & 2.8  & 2.9  & 0.1 & -2.6 & 0.1 \\
+    3    & 3.8  & 3.8  & 3.1  & 3.2  & 3.3  & 3.2  & 3.4  & 0.1 & -2.9 & 0.1 \\
+    2    & 4.6  & 4.6  & 3.7  & 4.0  & 4.1  & 4.0  & 4.2  & 0.1 & -3.3 & 0.1 \\
+    \hline
+    1    & 5.9  & 5.8  & 5.1  & 5.0  & 5.4  & 5.2  & 5.4  & 0.2 & -4.1 & 0.2 \\
+    0.9  & 6.2  & 6.3  & 5.4  & 5.6  & 5.6  & 5.5  & 5.8  & 0.2 & -4.3 & 0.2 \\
+    0.8  & 6.4  & 6.4  & 5.8  & 5.7  & 5.9  & 5.8  & 6.0  & 0.1 & -4.4 & 0.2 \\
+    0.7  & 6.8  & 6.8  & 6.1  & 6.1  & 6.2  & 6.1  & 6.4  & 0.1 & -4.6 & 0.2 \\
+    0.6  & 7.2  & 7.2  & 6.4  & 6.5  & 6.6  & 6.5  & 6.7  & 0.1 & -4.8 & 0.2 \\
+    0.5  & 7.8  & 7.7  & 7.0  & 7.0  & 7.1  & 7.0  & 7.3  & 0.2 & -5.1 & 0.2 \\
+    0.4  & 8.6  & 8.6  & 7.7  & 7.7  & 7.9  & 7.7  & 8.0  & 0.2 & -5.5 & 0.2 \\
+    \hline
+    0.3  & 10.2 & 9.9  & 8.9  & 8.9  & 9.0  & 8.8  & 9.3  & 0.2 & -6.1 & 0.3 \\
+    0.25 & 12.2 & 11.2 & 10.0 & 10.0 & 10.1 & 9.9  & 10.6 & 0.4 & -6.7 & 0.5 \\
+    0.2  & 21.6 & 15.6 & 13.2 & 12.4 & 12.7 & 12.3 & 15.0 & 1.0 & -9.0 & 3.0 \\
+  \end{tabular}
+\end{table}
+
+\begin{figure}[H] % p(t)-Kurve Turbopumpe
+  \centering
+  \includegraphics[width=\textwidth]{pictures/pt-Kurve-Turbopumpe.pdf}
+  \caption{Die p(t)-Kurve der Turbopumpe.}
+  \label{fig:ptturbo}
+\end{figure}
+
+In Tabelle \eqref{tab:ptSaugTurbo} sind die Parameter der Geraden aus der linearen Regression und das Saugvermögen aufgetragen.
+
+\begin{table}[H]
+  \centering
+  \caption{Das Saugvermögen der Turbopumpe für die drei Messbereiche aus der p(t)-Kurve.}
+  \label{tab:ptSaugTurbo}
+    \begin{tabular}{c|c|c|c|c|c|c}
+      Gerade & $m$ / $\frac{1}{\text{s}}$ & $\Delta m$ / $\frac{1}{\text{s}}$ & $b$ / $\frac{1}{\text{s}}$ & $\Delta b$ / $\frac{1}{\text{s}}$ & $S$ / $\frac{\text{l}}{\text{s}}$ & $\Delta S$ / $\frac{\text{l}}{\text{s}}$ \\
+      \midrule
+      1 & -0.65 & 0.02 & -0.67 & 0.04 & 6.5 & 0.6 \\
+      2 & -0.52 & 0.01 & -1.26 & 0.06 & 5.3 & 0.4 \\
+      3 & -0.44 & 0.01 & -1.99 & 0.07 & 4.5 & 0.4 \\
+    \end{tabular}
+\end{table}
+
+
+
+\subsection{Bestimmung des Saugvermögens über die Leckratenmessung}
+Im Folgenden wird das Saugvermögen $S$ aus der Leckratenmessung bestimmt. Dafür wird die Gleichung \eqref{eqn:SaugLeck} verwendet. Der Fehler des Saugvermögens wird im folgenden mit
+\begin{align}
+  \Delta S &= \sqrt{ \left(\frac{\partial S}{\partial V_0} \right)^2 (\Delta V_0)^2 + \left(\frac{\partial S}{\partial p_g} \right)^2 (\Delta p_g)^2 + \left(\frac{\partial S}{\partial a} \right)^2 (\Delta a)^2 } \nonumber \\
+  &= \sqrt{ \left(\frac{a}{p_g} \right)^2 (\Delta V_0)^2 + \left(-\,\frac{V_0\,a}{p_g^2} \right)^2 (\Delta p_g)^2 + \left(\frac{V_0}{p_g} \right)^2 (\Delta a)^2 }
+\end{align}
+berechnet.
+
+
+
+\subsubsection{Für die Drehschieberpumpe}
+In den Tabellen \eqref{tab:Leck0.1Dreh} bis \eqref{tab:Leck1.0Dreh} sind die Messwerte der Leckratenmessung für fünf unterschiedliche Gleichgewichtsdrücke aufgetragen. Außerdem ist der Mittelwert der Zeiten und der Fehler gebildet worden. Das Volumen $V_0$ aus Gleichung \eqref{eqn:SaugLeck} entspricht für die Drehschieberpumpe $V_\text{Dreh} = (\num{10.2 +- 0.8})$\,l
+
+\begin{table}[H]
+  \caption{Messwerte der Leckratenmessung bei fünf unterschiedlichen Gleichgewichtsdrücken mit der Drehschieberpumpe.}
+  \begin{subtable}{0.45\textwidth}
+    \subcaption{Gleichgewichtsdruck von 0.1\,mbar}
+    \hspace{-1.2cm}
+    \begin{tabular}{c|c|c|c|c|c}\label{tab:Leck0.1Dreh}
+      $p$\,/\,mbar & $t_1$\,/\,s & $t_2$\,/\,s & $t_3$\,/\,s & $\overline{t}$\,/\,s & $\Delta \overline{t}$\,/\,s \\
+      \midrule
+      0.2 & 11  & 12  & 12  & 11.7  & 0.3 \\
+      0.4 & 47  & 47  & 46  & 46.7  & 0.3 \\
+      0.6 & 94  & 95  & 95  & 94.7  & 0.3 \\
+      0.8 & 140 & 142 & 141 & 141.0 & 0.6 \\
+      1.0 & 175 & 177 & 179 & 177.0 & 1.0 \\
+    \end{tabular}
+  \end{subtable}\hfill
+  \begin{subtable}{0.45\textwidth}
+    \subcaption{Gleichgewichtsdruck von 0.4\,mbar}
+    \hspace{-0.5cm}
+    \begin{tabular}{c|c|c|c|c|c}\label{tab:Leck0.4Dreh}
+      $p$\,/\,mbar & $t_1$\,/\,s & $t_2$\,/\,s & $t_3$\,/\,s & $\overline{t}$\,/\,s & $\Delta \overline{t}$\,/\,s \\
+      \midrule
+      0.6 & 6   & 7  & 7  & 6.7  & 0.3 \\
+      0.8 & 14  & 15 & 14 & 14.3 & 0.3 \\
+      1.0 & 20  & 20 & 20 & 20.0 & 0.0 \\
+      2.0 & 51  & 51 & 50 & 50.7 & 0.3 \\
+      4.0 & 100 & 99 & 98 & 99.0 & 0.6 \\
+    \end{tabular}
+  \end{subtable}
+
+  \vspace{1cm}
+
+  \begin{subtable}{0.45\textwidth}
+    \subcaption{Gleichgewichtsdruck von 0.6\,mbar}
+    \hspace{-1.2cm}
+    \begin{tabular}{c|c|c|c|c|c}\label{tab:Leck0.6Dreh}
+      $p$\,/\,mbar & $t_1$\,/\,s & $t_2$\,/\,s & $t_3$\,/\,s & $\overline{t}$\,/\,s & $\Delta \overline{t}$\,/\,s \\
+      \midrule
+      0.8 & 4  & 4  & 4  & 4.0  & 0.0 \\
+      1.0 & 7  & 8  & 7  & 7.3  & 0.3 \\
+      2.0 & 25 & 25 & 24 & 24.7 & 0.3 \\
+      4.0 & 54 & 56 & 52 & 54.8 & 1.0 \\
+      6.0 & 82 & 80 & 81 & 81.0 & 0.6 \\
+    \end{tabular}
+  \end{subtable}\hfill
+  \begin{subtable}{0.45\textwidth}
+    \subcaption{Gleichgewichtsdruck von 0.8\,mbar}
+    \hspace{-0.5cm}
+    \begin{tabular}{c|c|c|c|c|c}\label{tab:Leck0.8Dreh}
+      $p$\,/\,mbar & $t_1$\,/\,s & $t_2$\,/\,s & $t_3$\,/\,s & $\overline{t}$\,/\,s & $\Delta \overline{t}$\,/\,s \\
+      \midrule
+      1.0 & 2  & 2  & 3  & 2.3  & 0.3 \\
+      2.0 & 14 & 14 & 15 & 14.3 & 0.3 \\
+      4.0 & 36 & 36 & 37 & 36.3 & 0.3 \\
+      6.0 & 55 & 54 & 57 & 55.3 & 0.9 \\
+      8.0 & 75 & 78 & 76 & 76.3 & 0.9 \\
+    \end{tabular}
+  \end{subtable}
+
+  \vspace{1cm}
+  \begin{subtable}{0.45\textwidth}
+    \subcaption{Gleichgewichtsdruck von 1.0\,mbar}
+    \hspace{-1.2cm}
+    \begin{tabular}{c|c|c|c|c|c}\label{tab:Leck1.0Dreh}
+      $p$\,/\,mbar & $t_1$\,/\,s & $t_2$\,/\,s & $t_3$\,/\,s & $\overline{t}$\,/\,s & $\Delta \overline{t}$\,/\,s \\
+      \midrule
+      2.0  & 10 & 10 & 10 & 10.0 & 0.0 \\
+      4.0  & 27 & 27 & 28 & 27.3 & 0.3 \\
+      6.0  & 42 & 41 & 41 & 41.3 & 0.3 \\
+      8.0  & 57 & 57 & 58 & 57.3 & 0.3 \\
+      10.0 & 72 & 71 & 74 & 72.3 & 0.9 \\
+    \end{tabular}
+  \end{subtable}
+\end{table}
+
+In den Abbildungen \eqref{fig:Leck0.1Dreh} bis \eqref{fig:Leck1.0Dreh} sind die Werte aus den oben stehenden Tabellen aufgetragen. Außerdem wurde eine lineare Regression durch die Werte gefittet.
+
+\begin{figure}[H]
+  \begin{subfigure}[c]{0.49\textwidth}
+    \includegraphics[width=\textwidth]{pictures/Leck-0.1mbar-D.pdf}
+    \subcaption{Leckratenmessung mit einem Gleichgewichtsdruck $p_g$ = 0.1\,mbar}
+    \label{fig:Leck0.1Dreh}
+  \end{subfigure}\hfill
+  \begin{subfigure}[c]{0.49\textwidth}
+    \includegraphics[width=\textwidth]{pictures/Leck-0.4mbar-D.pdf}
+    \subcaption{Leckratenmessung mit einem Gleichgewichtsdruck $p_g$ = 0.4\,mbar}
+    \label{fig:Leck0.4Dreh}
+  \end{subfigure}
+
+  \begin{subfigure}[c]{0.49\textwidth}
+    \includegraphics[width=\textwidth]{pictures/Leck-0.6mbar-D.pdf}
+    \subcaption{Leckratenmessung mit einem Gleichgewichtsdruck $p_g$ = 0.6\,mbar}
+    \label{fig:Leck0.6Dreh}
+  \end{subfigure}\hfill
+  \begin{subfigure}[c]{0.49\textwidth}
+    \includegraphics[width=\textwidth]{pictures/Leck-0.8mbar-D.pdf}
+    \subcaption{Leckratenmessung mit einem Gleichgewichtsdruck $p_g$ = 0.8\,mbar}
+    \label{fig:Leck0.8Dreh}
+  \end{subfigure}
+
+  \begin{subfigure}[c]{0.49\textwidth}
+    \includegraphics[width=\textwidth]{pictures/Leck-1.0mbar-D.pdf}
+    \subcaption{Leckratenmessung mit einem Gleichgewichtsdruck $p_g$ = 1.0\,mbar}
+    \label{fig:Leck1.0Dreh}
+  \end{subfigure}
+  \caption{Die lineare Regression der Leckratenmessung für die Drehschieberpumpe bei unterschiedlichen Gleichgewichtsdrücken.}
+\end{figure}
+
+In Tabelle \eqref{tab:SaugLeckDreh} ist das Saugvermögen für die fünf Gleichgewichtsdrücke berechnet worden. Auf den großen Fehler von ca. 10\,\% wird in der Diskussion weiter eingegangen.
+
+\begin{table}[H]
+   \caption{Messwerte zur Bestimmung des Saugvermögens der Drehschieberpumpe.}
+   \label{tab:SaugLeckDreh}
+   \hspace{-2cm}
+   \begin{tabular}{c|c|c|c|c|c|c|c}
+     Aus Diagramm & $p_\text{g}$ / mbar & $m$ / $10^{-2}\cdot\frac{\text{mbar}}{\text{s}}$ & $\Delta m$ / $10^{-2}\cdot\frac{\text{mbar}}{\text{s}}$ & $b$ / $\frac{\text{mbar}}{\text{s}}$ & $\Delta b$ / $\frac{\text{mbar}}{\text{s}}$ & $S$ / $\frac{\text{l}}{\text{s}}$ & $\Delta S$ / $\frac{\text{l}}{\text{s}}$ \\
+     \midrule
+     Abb. \eqref{fig:Leck0.1Dreh} & 0.1 & 0.48 & 0.02 & 0.15 & 0.01 & 0.5 & 0.1 \\
+     Abb. \eqref{fig:Leck0.4Dreh} & 0.4 & 3.4 & 0.2 & 0.34 & 0.04 & 0.9 & 0.2 \\
+     Abb. \eqref{fig:Leck0.6Dreh} & 0.6 & 6.4 & 0.2 & 0.53 & 0.03 & 1.1 & 0.2 \\
+     Abb. \eqref{fig:Leck0.8Dreh} & 0.8 & 9.2 & 0.2 & 0.77 & 0.04 & 1.2 & 0.3 \\
+     Abb. \eqref{fig:Leck1.0Dreh} & 1.0 & 12.6 & 0.3 & 0.71 & 0.07 & 1.3 & 0.3 \\
+ \end{tabular}
+\end{table}
+
+
+
+\subsubsection{Für die Turbopumpe}
+In den Tabellen \eqref{tab:Leck5Turbo} bis \eqref{tab:Leck20Turbo} sind die Messwerte der Leckratenmessung für vier unterschiedliche Gleichgewichtsdrücke aufgetragen. Außerdem ist der Mittelwert der Zeiten und der Fehler gebildet worden. Das Volumen $V_0$ aus Gleichung \eqref{eqn:SaugLeck} entspricht für die Turbopumpe $V_\text{Turbo} = (\num{10.0 +- 0.8})$\,l
+
+\begin{table}[H]
+  \caption{Messwerte der Leckratenmessung bei vier unterschiedlichen Gleichgewichtsdrücken mit der Turbopumpe.}
+  \begin{subtable}{0.49\textwidth}
+    \subcaption{Gleichgewichtsdruck von $5\cdot 10^{-5}$\,mbar}
+    \hspace{-1.5cm}
+    \begin{tabular}{c|c|c|c|c|c}\label{tab:Leck5Turbo}
+      $p$\,/\,$10^{-4}$\,mbar & $t_1$\,/\,s & $t_2$\,/\,s & $t_3$\,/\,s & $\overline{t}$\,/\,s & $\Delta\overline{t}$\,/\,s \\
+      \midrule
+      2  & 1.6  & 1.5  & 1.8  & 1.63 & 0.01 \\
+      4  & 4.8  & 4.8  & 5.1  & 4.9  & 0.1  \\
+      6  & 7.8  & 8.0  & 8.3  & 8.0  & 0.1  \\
+      8  & 10.6 & 10.9 & 11.3 & 10.9 & 0.2  \\
+      10 & 14.2 & 15.1 & 15.1 & 14.8 & 0.3  \\
+      20 & 27.2 & 28.7 & 29.3 & 28.4 & 0.6  \\
+      30 & 39.2 & 41.3 & 43.0 & 41.0 & 1.0  \\
+      40 & 49.9 & 53.1 & 54.0 & 52.0 & 1.0  \\
+      50 & 60.9 & 64.2 & 65.1 & 63.0 & 1.0  \\
+    \end{tabular}
+  \end{subtable}\hspace{2cm}
+  \begin{subtable}{0.49\textwidth}
+    \subcaption{Gleichgewichtsdruck von $10\cdot 10^{-5}$\,mbar}
+    \hspace{-1.5cm}
+    \begin{tabular}{c|c|c|c|c|c}\label{tab:Leck10Turbo}
+      $p$\,/\,$10^{-4}$\,mbar & $t_1$\,/\,s & $t_2$\,/\,s &   $t_3$\,/\,s & $\overline{t}$\,/\,s & $\Delta\overline{t}$\,/\,s \\
+      \midrule
+      2  & 0.2  & 0.3  & 0.2  & 0.23 & 0.03 \\
+      4  & 1.1  & 1.1  & 0.9  & 1.03 & 0.07 \\
+      6  & 2.4  & 2.4  & 2.2  & 2.33 & 0.07 \\
+      8  & 3.6  & 3.5  & 3.4  & 3.50 & 0.06 \\
+      10 & 5.3  & 5.8  & 5.7  & 5.6  & 0.2  \\
+      20 & 10.2 & 11.5 & 11.2 & 11.0 & 0.4  \\
+      40 & 19.6 & 21.7 & 21.4 & 20.9 & 0.7  \\
+      60 & 28.0 & 30.7 & 31.4 & 30.0 & 1.0  \\
+      80 & 35.2 & 37.9 & 37.9 & 37.0 & 0.9  \\
+    \end{tabular}
+  \end{subtable}
+
+  \vspace{1cm}
+
+  \begin{subtable}{0.49\textwidth}
+    \subcaption{Gleichgewichtsdruck von $15\cdot 10^{-5}$\,mbar}
+    \hspace{-1.5cm}
+    \begin{tabular}{c|c|c|c|c|c}\label{tab:Leck15Turbo}
+      $p$\,/\,$10^{-4}$\,mbar & $t_1$\,/\,s & $t_2$\,/\,s & $t_3$\,/\,s & $\overline{t}$\,/\,s & $\Delta\overline{t}$\,/\,s \\
+      \midrule
+      4  & 0.2  & 0.3  & 0.4  & 0.33  & 0.06 \\
+      6  & 1.0  & 1.0  & 1.1  & 1.03  & 0.03 \\
+      8  & 1.8  & 1.9  & 1.9  & 1.87  & 0.03 \\
+      10 & 3.3  & 3.4  & 3.4  & 3.37  & 0.03 \\
+      20 & 7.1  & 7.3  & 7.3  & 7.23  & 0.07 \\
+      40 & 14.1 & 14.0 & 14.1 & 14.07 & 0.03 \\
+      60 & 20.2 & 20.2 & 20.2 & 20.20 & 0.0  \\
+      80 & 25.6 & 25.4 & 25.2 & 25.40 & 0.1  \\
+    \end{tabular}
+  \end{subtable}\hspace{2cm}
+  \begin{subtable}{0.49\textwidth}
+    \subcaption{Gleichgewichtsdruck von $20\cdot 10^{-5}$\,mbar}
+    \hspace{-1.4cm}
+    \begin{tabular}{c|c|c|c|c|c}\label{tab:Leck20Turbo}
+      $p$\,/\,$10^{-4}$\,mbar & $t_1$\,/\,s & $t_2$\,/\,s & $t_3$\,/\,s & $\overline{t}$\,/\,s & $\Delta\overline{t}$\,/\,s \\
+      \midrule
+      4  & 0.3  & 0.3  & 0.4  & 0.33  & 0.03 \\
+      6  & 0.6  & 0.5  & 0.6  & 0.57  & 0.03 \\
+      8  & 1.1  & 1.2  & 1.2  & 1.17  & 0.03 \\
+      10 & 2.5  & 2.3  & 2.5  & 2.43  & 0.07 \\
+      20 & 5.1  & 5.2  & 5.2  & 5.17  & 0.03 \\
+      40 & 10.4 & 10.5 & 10.5 & 10.47 & 0.03 \\
+      60 & 15.1 & 15.1 & 15.0 & 15.07 & 0.03 \\
+      80 & 18.7 & 19.1 & 19.1 & 19.0  & 0.1  \\
+    \end{tabular}
+  \end{subtable}
+\end{table}
+
+In den Abbildungen \eqref{fig:Leck5Turbo} bis \eqref{fig:Leck20Turbo} sind die Werte aus den oben stehenden Tabellen aufgetragen. Zusätzlich wurde eine lineare Regression durch die Werte gelegt.
+
+\begin{figure}[H]
+  \begin{subfigure}[c]{0.49\textwidth}
+    \includegraphics[width=\textwidth]{pictures/Leck-5mbar-T.pdf}
+    \subcaption{Leckratenmessung mit einem Gleichgewichtsdruck $p_g = 5 \cdot 10^{-5}$\,mbar}
+    \label{fig:Leck5Turbo}
+  \end{subfigure}\hfill
+  \begin{subfigure}[c]{0.49\textwidth}
+    \includegraphics[width=\textwidth]{pictures/Leck-10mbar-T.pdf}
+    \subcaption{Leckratenmessung mit einem Gleichgewichtsdruck $p_g = 10 \cdot 10^{-5}$\,mbar}
+    \label{fig:Leck10Turbo}
+  \end{subfigure}
+
+  \begin{subfigure}[c]{0.49\textwidth}
+    \includegraphics[width=\textwidth]{pictures/Leck-15mbar-T.pdf}
+    \subcaption{Leckratenmessung mit einem Gleichgewichtsdruck $p_g = 15 \cdot 10^{-5}$\,mbar}
+    \label{fig:Leck15Turbo}
+  \end{subfigure}\hfill
+  \begin{subfigure}[c]{0.49\textwidth}
+    \includegraphics[width=\textwidth]{pictures/Leck-20mbar-T.pdf}
+    \subcaption{Leckratenmessung mit einem Gleichgewichtsdruck $p_g = 20 \cdot 10^{-5}$\,mbar}
+    \label{fig:Leck20Turbo}
+  \end{subfigure}
+
+  \caption{Die lineare Regression der Leckratenmessung für die Turbopumpe bei unterschiedlichen Gleichgewichtsdrücken.}
+\end{figure}
+
+In Tabelle \eqref{tab:SaugLeckTurbo} ist das Saugvermögen für die vier Gleichgewichtsdrücke berechnet worden.
+
+\begin{table}[H]
+   \caption{Messwerte zur Bestimmung des Saugvermögens für die Turbopumpe.}
+   \label{tab:SaugLeckTurbo}
+   \begin{tabular}{c|c|c|c|c}
+     \toprule
+     Aus Diagramm & $p_\text{g}$ / $10^{-5}\cdot$mbar & $m$ / $10^{-4}\cdot \frac{\text{mbar}}{\text{s}}$ & $\Delta m$ / $10^{-4}\cdot \frac{\text{mbar}}{\text{s}}$ \\
+     \midrule
+     Abb. \eqref{fig:Leck5Turbo}  & 5  & 6.9  & 0.2 \\
+     Abb. \eqref{fig:Leck10Turbo} & 10 & 18.1 & 0.9 \\
+     Abb. \eqref{fig:Leck15Turbo} & 15 & 26.0 & 2.0 \\
+     Abb. \eqref{fig:Leck20Turbo} & 20 & 36.0 & 2.0 \\
+     \multicolumn{5}{c}{}\\
+     \toprule
+     Aus Diagramm & $b$ / $10^{-4}\cdot \frac{\text{mbar}}{\text{s}}$ & $\Delta b$ / $10^{-4}\cdot \frac{\text{mbar}}{\text{s}}$ & $S$ / $\frac{\text{l}}{\text{s}}$ & $\Delta S$ / $\frac{\text{l}}{\text{s}}$ \\
+     \midrule
+     Abb. \eqref{fig:Leck5Turbo}  & 8.0 & 2.0 & 14.0 & 2.0 \\
+     Abb. \eqref{fig:Leck10Turbo} & 16.0  & 2.0 & 18.1 & 2.0 \\
+     Abb. \eqref{fig:Leck15Turbo} & 31.0  & 4.0 & 17.0 & 2.0 \\
+     Abb. \eqref{fig:Leck20Turbo} & 31.0  & 4.0 & 18.0 & 3.0 \\
+  \end{tabular}
+\end{table}

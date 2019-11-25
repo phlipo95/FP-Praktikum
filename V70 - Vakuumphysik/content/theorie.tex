@@ -1,0 +1,210 @@
+\section{Theoretische Grundlage}
+\label{sec:Theorie}
+
+\subsection{Einführung}
+Ist in einem Raum keine Materie vorhanden und der Gasdruck verschwunden, wird dieses als perfektes Vakuum bezeichnet. Bereits die griechischen Philiosophen Ende des 4. Jahrhunderts konnten die Gedankenspiele über die Existenz eines leeren Raums nicht zweifelsfrei beantworten. Mit dem Aufstreben der Quantenmechanik, stellt sich erneut die Frage in wie fern überhaupt ein teilchenfreier Raum in den Grenzen der Energie-Zeitunschärfe möglich ist, worauf im Folgenden noch eingenangen wird. Rein phänomenologisch ist das Vakuum definiert als:
+
+``\textit{Vakuum heißt der Zustand eines Gases, wenn in einem Behälter der Druck des Gases und damit die Teilchenzahldichte niedriger ist als außerhalb oder wenn der Druck des Gases niedriger ist als 300 mbar, d. h. kleiner als der niedrigste auf der Erdoberfläche vorkommende Atmosphärendruck}'' \cite{DIN}
+
+Ziel des Versuches ist es die Grundlagen der Vakuumtechnik nachzuvollziehen und die für den Versuch benötigtten Komponenten kennenzulernen. Dies geschieht indem für die beiden verwendeten Pumpenarten das Saugvermögen, als auch eine Leckratenmessung durchgeführt wird.
+
+\subsection{Messgrößen zur Bestimmung des Vakuums}
+Das Maß eines Vakuums ist der Druck $p$. Dieser ist definiert als Kraft $F$ pro Fläche $A$
+\begin{equation}
+  p = \frac{F}{A} = \left[ \frac{\text{N}}{\text{m}^2} \right]
+  \label{eqn:druck}
+\end{equation}
+Anhand dessen lässt sich das Vakuum in verschiedene Kategorien unterteilen, was im späteren noch gezeigt wird. Desweiteren lässt sich bei einem Gemisch aus Gasen der Gesamtdruck $p_\text{Ges}$ in mehrere Partialdrücke aufteilen. Es gilt, dass die Summe über alle Partialdrücke dem Gesamtdruck entspricht. Analog wird mit der Teilchenanzahl vorgegangen. Der Partialdruck entspricht dem Druck welcher das entsprechende Gemisch in dem selben Volumen, wodrin sich $p_\text{Ges}$ befindet, ausüben würde. \newline
+Der Druck wird üblicherweise in den Einheiten mbar gemessen. Der Normaldruck ist auf 1013 mbar definiert. Der Umrechenfaktor von bar in Pa berträgt $10^{5}$. \newline
+Desweiteren zeichnet sich ein Gas durch die mittlere freie Weglänge $\Lambda$ eines Teilchens aus, bis es mit einem anderen wechselwirkt. Durch Einführen eines Stoßquerschnitts $\sigma$, der Teilchenzahl $N$ und der Forderung nach einer konstanten Teilchenzahldichte $n$, lässt sich durch Lösen einer Differentialgleichung
+\begin{equation}
+  \frac{dN}{N} = -n \sigma \Delta x
+  \label{eqn:mfWDGL}
+\end{equation}
+zeigen, dass die mittlere freie Weglänge invers proportional zu dem Produkt aus Teilchenzahlichte und Stoßquerschnitt ist.
+\begin{equation}
+  \Lambda = \frac{1}{n \sigma}= \frac{k T}{\sqrt{2} \pi D^2 p}
+  \label{eqn:mfW}
+\end{equation}
+Ebenso lässt sich für den Gleichgewichtszustand unter der Annhame das die Gasmolekühle punktförmig sind, aus der Teilchesnzahldichte $n$ und derm Durchmesser $D$ der punktförmigen Teilchen die mittlere Weglänge $\Lambda$ herleiten. Da die Teilchenanzahl $N$ von Luft bei Normaldruck als gegeben vorrausgesetzt wird, kann aus der Vorraussetzung, dass das Produkt aus $p\cdot V$ konstant ist, die Teilchenzahl bei den Drücken berechnet werden.
+\begin{table}
+  \centering
+  \caption{Übersicht über die Druckbereiche, die mittlere freie Weglänge und die Teilchenanzahl}
+  \begin{tabular}{c|c c c}
+  	\toprule
+	Druckbereiche & Druck / mbar & Moleküle / $cm^3$ & mittlere freie Weglänge \\
+	\midrule
+	Normaldruck	& 1013.25			& $2.7 \cdot 10^{19}$ &	68 nm \\
+	Unterdruck	& > 300				& k.A. & k.A \\
+	Grobvakuum	& 300 \ldots 1 			&$10^{19} \cdot 10^{16}$&0.1 \ldots 100 $\mu m$ \\
+	Feinvakuum	& 1 \ldots $10^{-3}$		& $10^{16} \cdot 10^{13}$ & 0.1 \ldots 100 mm \\
+	Hochvakuum	& $10^{-3} \cdots 10^{-7}$	& $10^{13} \cdot 10^{9}$ & 100 mm \ldots 1km \\
+	Ultrahochvakuum	& $10^{-7} \cdots 10^{-12}$	& $10^9 \cdots 10^4$ & 1 m \ldots $10^5$ m \\
+	extrem hohes Vakuum & $< 10^{-12}$		& $<10^4$ & $> 10^5$ \\
+	\bottomrule
+  \end{tabular}
+  \label{tab:ueberblick}
+\end{table}
+\subsection{p(t) Kurve}
+Für die Auswertung wird eine Funktion benötigt welche den Druck in abhängigkeit der Zeit angibt. Dafür muss die Annahme getroffen werden, dass die Saugleistug $S$ für den angegebenen Zeitraum konstant ist und nicht vom Druck $p(t)$ abhängt. Dann entspricht die zeitliche Änderung des Volumens
+\begin{equation}
+  \frac{\text{d}V}{\text{d}t} = S \ .
+\end{equation}
+Zusätzlich wird eingefordert, dass die Temperatur des Gases bei dem Vorgang konstant ist. Mithilfe des idealen Gasgesetzes
+\begin{equation}
+  p V = n R T
+\end{equation}
+lässt sich für eine zeitabhängige Druckänderung
+\begin{equation}
+  \frac{\text{d}}{\text{dt}} pV = \frac{\text{d}}{\text{dt}} \underbrace{n R T}_{\substack{konst.}}
+\end{equation}
+bei konstanter Stoffmenge $n$ im System die Gleichung
+\begin{equation}
+  \frac{\text{d}p}{\text{d}t} V= \frac{\text{d}V}{\text{d}t} p
+  \label{eqn:konti}
+\end{equation}
+herleiten. Durch Lösen der DGL ergibt sich die Gleichung:
+\begin{equation}
+  p(t) = p_0 \exp \left( \frac{-t}{\tau} \right)
+\end{equation}
+Durch Einsetzen der Anfangsbedingungen $p_0$ und des Enddrucks $p_\text{E}$ ergibt sich für den zeitabhängigen Druck
+\begin{equation}
+  p(t) = (p_0 - p_\text{E}) \exp \left( -t \frac{S}{V} \right) + p_\text{E}
+  \label{eqn:Druck}
+\end{equation}
+\subsection{Bestimmung des Saugvermögens über die Leckratenmessung}
+Das Saugvermögen $S$ ist gleich dem Quotienten aus des Leckrate des Rezipienten $Q$ und dem Gleichgewichtsdruck $p_\text{g}$.
+\begin{align}
+   S = \frac{Q}{p_\text{g}}
+\end{align}
+Die Leckrate $Q$ ergibt sich zu
+\begin{align}
+   Q = V_0\, \frac{\Delta p}{\Delta t}
+\end{align}
+Aus dem Volumen $V_0$ des Rezipienten und dem Quotienten $\frac{\Delta p}{\Delta t}$ lässt sich das Saugvermögen der Pumpe bestimmen, wenn die Zeit $t$ gegen den Druck $p$ aufgetragen wird. Daraus folgt für das Saugvermögen
+\begin{align}\label{eqn:SaugLeck}
+   S = \frac{V_0}{p_\text{g}}\, \frac{\Delta p}{\Delta t}
+\end{align}
+\subsection{Wechselwirkungsprozesse zwischen Restgasen und der Umgebung}
+Befindet sich ein Gas oder eine Flüssigkeit eingeschlossen in einem Körper, wechselwirkt das Gas oder die Flüssigkeit mit der Grenzfläche. Dabei können die unten aufgeführten Prozesse auftreten. In Kapitel \ref{sec:Durchführung} werden Maßnahmen vorgestellt dem entgegenzuwirken. (Erwärmen, Rezipient verschließen).
+\begin{itemize}
+  \item \textbf{Absorption:} Trifft ein Teilchen auf die Grenzfläche ist es möglich, dass es von dieser aufgenommen wird. Danach befindet es sich für unbestimmte Zeit im Absorbermaterial, kann jedoch auch wieder aufgrund ihrer eigener thermischen Energie emittiert werden.
+  \item \textbf{Adsorption:} Trifft ein Teilchen auf die Grenzfläche kann es sich neben der Absorbtion auch auf der Oberfläche des Absorbermaterials ablagern. Dabei wird es mittels Van-der-Waals Kräfte oder Dipolkräfte an der Grenzfläche des Rezipienten gebunden.
+  \item \textbf{Desorption:} Es ist der Umkehrprozess der Adsorbtion. Dabei wird ein Teilchen von der Rezipientenwand an das Vakuum abgegeben und ist somit nicht mehr lokalisiert.
+  \item \textbf{Virtuelles Leck:} Falls in einem evakuierten System ein nicht zu ortendes Leck vorhanden ist, wird dieses als virtuelles Leck bezeichnet. Bei niedrigeren Drücken stört dieses das System und begrenzt den Enddruck neben der Pumpleistung.
+  \item \textbf{Diffusion:} Ist in einem geschlossenen System eine inhomogenen Gasverteilung, sorgt die Diffusion dafür, dass die Verteilung in den Gleichgewichtszustand über geht. Es beruht darauf das die ungerichteten Bewegungen die Zeitumkehrinvarianz brechen und das System in den Zustand der maximalen Entropie treibt.
+  \item \textbf{Ausgasen:} Ist ein Festkörper durch zu langen Kontakt mit der Umwelt verureinigt, kann es aufgrund von Druckentlastung zum austreten von Gasen aus flüssigen oder festen Materialien kommen.
+\end{itemize}
+\subsection{Strömungsprozesse und Leitwert}
+Bewegungen von Fluiden werden meist der Anschaulichkeit halber durch Schichten beschrieben. Dabei sind Oberflächenphänomene, wie zum Beispiel die Häufigkeit von Wechselwirkungen von Gasmolekühlen mit der Grenzfläche des Rezipienten, und der Verlauf der Schichten von besonderem Interesse. Der Verlauf der Schichten, als auch die Oberflächeneigenschaften der Grenzfläche des Vakuums haben Auswirkungen auf die Sauggeschwindigkeit von Vakuumpumpen, da diese aufgrund eines größeren Strömungswiederstand $W$ abnimmt. So hängt der Leitwert $L$ als abgeleitete größe vom Strömungswiderstand $W$ zum Beispiel von der dritten Potenz des Querschnittes der Leitung ab. \cite{Jena}
+\subsubsection{Laminare Strömung:}
+Als laminare Strömung wird eine turbulenzfreie Strömung verstanden. Dabei mischen sich die Schichten von Fluiden, wenn sie an Hindernissen vorbeifließen, nicht untereinander.
+
+\subsubsection{Molekulare Strömung:}
+Als molekular Strömung wird eine Strömung bezeichnet, bei der die mittlere freie Weglänge größer ist als der Durchmesser der Strömung. Dies ist immer dann der Fall, wenn die Drücke hinreichend klein sind (typisch sind Hoch-/Ultrahochvakua). Aufgrund der geringen Teilchendichte wechselwirken diese öfters mit den Grenzflächen als untereinander.
+
+\subsubsection{Leitwert:}
+Zur Berechnung des Saugvermögens einer Pumpe wird der Strömungswiderstand der Geometrie des Aufbaus berücksichtigt. Dafür wird der Quotient aus der Länge der Leitung $l$ und des Strömungswiderstandes $W$ gebildet.
+\begin{equation}\label{eqn:Leitwert}
+  C = \frac{l}{W} = \frac{q_\text{pV}}{\Delta p}
+\end{equation}
+Dies entspricht dem Quotienten des Durchflusses $q_\text{pV}$ und der Druckdifferenz $\Delta p$ der Leitungsenden. Der Durchfluss
+\begin{equation}
+ q_\text{pV} = S \cdot p
+  \label{eqn:durch}
+\end{equation}
+gibt dabei den Durchsatz des Fluidstroms an, wobei $S$ die Saugleistung und $p$ der Eingangsdruck ist. Der Strömungswiderstand $W$ verhält sich analog zum elektrischen Widerstand. Dementsprechend sind die kirchhoffschen Regeln ebenso gültig. So gilt für die Parallelschaltung von Bauteilen für den Leitwert
+\begin{equation}
+  C_\text{ges} = C_1 + C_2 + \cdots + C_\text{n}
+  \label{eqn:LeitParallel}
+\end{equation}
+sowie für die Reihenschaltung
+\begin{equation}
+  \frac{1}{C_\text{ges}} = \frac{1}{C_1} + \frac{1}{C_2} + \cdots + \frac{1}{C_\text{n}} \ .
+  \label{eqn:LeitReihe}
+\end{equation}
+
+\section{Technische Grundlagen}
+Im Folgenden werden die für den Versuch benötigten technischen Grundlagen skizziert.
+\subsection{Pumpentypen und Funktionsweise}
+Pumpen lassen sich anhand der verschiedenen Saugraten $S$, ihrer Funktionsweise und den erreichten Enddrücke $p_\text{E}$ kategorisieren. Eine Übersicht über die verschiedenen Pumpen kategorisiert nach deren Funktionsweisen ist in Abblidung \ref{fig:Uebersicht} dargestellt.
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.9\textwidth]{picture/Uebersicht.png}
+  \caption{Übersicht der verschiedenen Kategorien von Vakuumpumpen \cite{Uebersicht}}
+  \label{fig:Uebersicht}
+\end{figure}
+Die Funktionsweise von kinetische Pumpen beruht darauf, dass durch Beschleunigung des Gases in Pumprichtung der Gasdruck verringert wird.
+Verdrängerpumpen kennzeichen sich dadurch aus, dass aufgrund von Volumenvergrößerungen der Gasdruck gesenkt wird. Dies wird als Boylesches Gesetz bezeichnet welches besagt, dass der Druck umgekehrt proportional zum Volumen bei konstanter Temperatur ist.
+Gasbindenende Pumpen zeichnen sich dadurch aus, dass sie die Gasmoleküle an der Oberfläche des Rezipienten binden und somit den Druck senken. Sie werden auch als Speicher-Pumpen bezeichnet, weil Sie die Moleküle nicht abtranspotieren, sondern an der Oberfläche des Rezipienten binden. Mit ihnen lassen sich nach Einstellung eines Vorvakuums sehr geringe Drücke herstellen. Ein Vorvakuum wird benötigt da Speicherpumpen eine begrenzte Aufnahmefähigkeit haben und bei zu niedrigen Vorvakua zu viele Teilchen im Rezipienten vorhanden sind, sodass es nicht zu einer wesentlichen Druckabsenkung kommt (vergleiche Tabelle \ref{tab:ueberblick} Teilchenzahl.
+Allgemein lassen sich alle Pumpen die Gas aus dem Rezipienten an die Umgebung transportieren als Transportpumpen zusammenfassen.
+Beispielhaft werden drei Pumpen vorgestellt, welche weit verbreitet in der Vakuumstechnik sind.
+\subsubsection{Drehschieberpumpe:}
+\begin{wrapfigure}{r}{0.35\textwidth}
+    \vspace{-1cm}
+    \centering
+    \includegraphics[width=0.34\textwidth]{./picture/Drehschieberpumpe.png}
+    \caption{Schematischer Darstellung einer Drehschiebepumpe \cite{Dreh},\cite{Jena}}
+    \label{fig:Dreh}
+    \vspace{-0.5cm}
+\end{wrapfigure}
+Die Drehschierbepumpe ist eine Verdrängerpumpe. Eine Skizze vom Aufbau ist in Abbildung \ref{fig:Dreh} abgebildet. Sie kennzeichnet sich durch eine zylindrische Kammer aus in der ein zylindrischer Rotor gelagert ist. An dem Rotor befinden sich zwei Drehschieber, welche den Inhalt der Drehkammer in zwei Volumina aufteilen. Die zylinderische Kammer ist einerseits mit dem Rezipienten und andererseits mit der Außenwelt verbunden. Durch die Volumenvergrößerung des Rezipienten strömt Gas in die Pumpe, welches durch ein Überdruckventil durch Kompression nach einer halben Rotorumdrehung das Gas an die Umwelt abgibt. Der Enddruck $p_\text{E}$ ist im Wesentlichen durch das Restvolumen bestimmt, welches beim komprimieren nicht durch das Auslasventil abgeführt wird. Drehschieberpumpen haben typischerweise eine Saugvermögen von einigen Litern pro Sekunde. Der Enddruck für eine einstufige Drehschiebepumpe befindet sich im Bereich von etwa $10^{-3}$ mbar und mehrstufige Drehschiebepumpen bis zu $10^{-6}$ mbar.
+\subsubsection{Turbomolekularpumpe (kurz Turbopumpe):}
+\begin{wrapfigure}{l}{0.35\textwidth}
+    \vspace{-1cm}
+    \centering
+    \includegraphics[width=0.33\textwidth]{./picture/Turbo.jpg}
+    \caption{Querschnitt Turbopumpe \cite{Turbo}}
+    \label{fig:Turbo}
+    \vspace{-0.5cm}
+\end{wrapfigure}
+Die Turbopumpe benötigt für die Inbetriebnahme ein Vorvakuum und gehört zu den kinetischen Pumpen. Sie zeichnet sich durch ihren abwechselnden Aufbau aus Turbinen-  und Statorscheiben aus. Die Ventilatorblätter sind gegen die Scheibenebene gekippt und haben nach außen hin einen immer größer werdenden Neigungswinkel. Durch den größer werdenden Neigungswinkel sinkt die Wahrscheinlichkeit das ein Teilchen durch die Turbopumpe hindurch zurück in den Rezipienten gelangt. Gelingt ein Gasmolekül aus dem Rezipienten auf die Turbinenflügel, wird dieses kurz von diesem Adsorbiert bzw. stößt mit diesem und wird anschließend weiter zu den Rotorblättern mit einem höheren Neigungswinkel befördert. Damit die Turbopumpe arbeiten kann, muss die mittlere freie Weglänge der Gasmoleküle in der Größenordung des Abstandes der Rotorblätter oder größer sein. Die Turbomolekularpumpe erzeugt typischerweise Enddrücke von $10^{-6}$ bis zu $10^{-9}$ mbar. Bei Rotordrehzahlen von einigen 10.000 Umdrehungen pro Minute erreichen Turbomolekularpumpen, je nach Geometrie, Saugvermögen von mehreren Litern pro Sekunde bis zu tausenden von Litern pro Sekunde.
+
+\subsubsection{Ionengetterpumpe}
+Die Ionengetterpumpe gehört zu der Kategorie der Sorptionspumpen. Das Wirkungsprinzip beruht darauf, dass die Gasteilchen ionisiert und anschließend mittels eines angelegten elektrischen Feldes zum Gettermaterial befördert werden. Somit ist dieses an der Oberfläche des Gettermaterials gebunden und verringert den Druck im Volumen des Rezipienten. Durch das auftrefen der Ionen auf die Oberfläche werden Elektronen freigesetzt, welche weiter Restpartikel ionisieren können. Durch erhitzen des Rezipientens kann die thermische emission von Elektronen gesteigert werden. Beträgt der Gasdruck in etwa $10^{-11}$ mbar ist die freie Wegläge dementsprechend groß, dass Wechselwirkungen zwischen Gasmolekühle und den Elektronen praktisch nicht mehr auftreten. Dies ist die Grenze der Ionengetterpumpe.
+\subsection{Messgeräte}
+Für die Messung von verschiedenen Drücken werden unterschiedliche Messinstrumente benötigt. Desweiteren muss gewährleistet werden, dass die Geräte beim erzeugen des Vakuums keinen Schaden nehmen. Aufgrund dessen müssen einige Messgeräte vor zu hohen Drücken zum Beispiel durch Überbrückung gesichert werden können. Die Messgeräte werden im folgenden sortiert nach ihren Messbereichen von hohen Drücken hin zu niedrigen Drücken vorgestellt und ihre Funktionsweise kurz erläutert.
+
+\subsubsection{Pirani Messgerät}
+\begin{wrapfigure}{l}{0.5\textwidth}
+  \centering
+  \includegraphics[width=0.48\textwidth]{picture/Pirani.JPG}
+  \caption{Abhänigkeit der Wärmekapazität vom Druck \cite{Dreh}, \cite{Jena}}
+  \label{fig:pirani}
+  \vspace{-0.8cm}
+\end{wrapfigure}
+Das Pirani Messgerät, bei dem die druckabhängige Wärmeleitung des Gases ausgenutzt wird, kommt bei Drücken zwischen Normaldruck und $5 \cdot 10^{-4}$ mbar zum Einsatz. Die Wirkungsweise beruht darauf, dass in dem Gebiet von 1 mbar bis zu $10^{-4}$ mbar, wie in Abbildung \ref{fig:pirani} zu sehen, die Wärmeleifähigkeit proportional zum Druck ist. Das technische Prinzip beruht darauf, dass ein zentrisch aufgespannten Draht durch einen konstanten Strom geheizt wird. Der Wärmetransport des Drahtes ist proportional zur Teilchenzahldichte, welche wiederum proportional zum Druck ist. Wird nun die Temperatur des Drahtes konstant gehalten, kann durch Messung des Stromes auf den Druck nach einer Eichung rückgeschlossen werden. In den Bereichen A und C der Abildung \ref{fig:pirani} ist die Wärmeleitfähigkeit nicht mehr proportional zum Druck. Durch Anpassung der Drahttemperatur ist es aufgrund des physikalischen Prinzip der Konvektions den Messbereich bis in etwa 1000 mbar zu erweiten.
+
+\subsubsection{Kaltkathodenmessgerät}
+Beim Kaltkathodenmessgerät wird ein starkes E-Feld von einigen kV angelegt. Dabei werden Elektronen aufgrund von elektronischen Feldemmision aus der Kathode gelöst. Das Prinzip der Feldemmision beruht darauf, dass die Elektronen quantenmechanisch gesehen eine geringe wahrscheinlichkeit besitzen die Kathode zu verlassen (tunneln). Aufgrund der Beschleunigung durch das Feld, ionisieren die Primär-Elektronen weitere Gasmoleküle, sodass ein Ionenstrom erzeugt wird. Dieser Effekt wird durch Anlegung eines äußeren B-Feldes verstärkt, da dadurch die Elektronen aufgrund der Lorentz-Kraft auf Kreisbahnen gezwungen werden und die Weglänge zur Anode zunimmt. Aufgrund dessen erhöht sich die Ionisationwahrscheinlichkeit. Durch Messung des Ionisationsstrom kann auf den Druck rückgeschlossen werden. Dabei muss berücksichtigt werden, dass der Ionisationsstrom auch von der Gasart abhängig ist. Die untere Grenze des Messbereich des Kaltkathodenmessgerätes ist ca $10^{-4}$ mbar. Trotz der verlängerten Elektronenbahn können nicht genügend Gasmoleküle ionisiert werden.
+
+\subsubsection{Heißkathodenmessgerät}
+\begin{wrapfigure}{r}{0.3\textwidth}
+  \vspace{-1.0cm}
+  \centering
+  \includegraphics[width=0.28\textwidth]{picture/Heißkathode.png}
+  \caption{Funktionsweise Heißkathoden-Messgerät \cite{Heiss}}
+  \label{fig:Heißkathode}
+  \vspace{-1.2cm}
+\end{wrapfigure}
+Die Wirkungsweise des Heißkathodenmessgeräts ähnelt dem des Kaltkathodenmessgeräts. Dadurch das es jedoch bei niedigeren Drücken zum einsatz kommt, werden zu wenig Elektronen durch die elektrische Feldemission frei, so dass zuwenige Gasmolekühle aufgrund der geringen Teilchenzahl ionisiert werden. Daher wäre kein Anodenstrom zu messen. Aufgrund dessen wird eine Glühkathode genutzt welche eine Elektronenwolke erzeugt. Diese wird durch die Anode beschleunigt und Ionisiert auf den Weg hin zur Anode Gasmolekühle. Die Ionen wrden mittels eines Ionenemfänger eingefangen und durch Messung des Ionenstroms kann somit der Druck bestimmt werden. Das Heißkathodenmessgerät sollte nicht bei Drücken von oberhalb von $10^{-2}$ mbar verwendet werden, da sonst die Glühkathode schmilzt. Abhängig vom Gasgemisch von dem der Druck bestimmt werden soll, sind Drücke bis zu $10^{-12}$ mbar aufzulösen.
+\section{Fehlerrechnung}
+Sämtliche Fehlerrechnungen werden mit Hilfe von Python 3.4.3 durchgeführt.
+\subsubsection{Mittelwert}
+Der Mittelwert einer Messreihe $x_\text{1}, ... ,x_\text{n}$ lässt sich durch die Formel
+\begin{equation}
+	\overline{x} = \frac{1}{N} \sum_{\text{k}=1}^\text{N} x_k
+	\label{eqn:ave}
+\end{equation}
+berechnen. Der Fehler des Mittelwertes beträgt
+\begin{equation}
+	\Delta \overline{x} = \sqrt{ \frac{1}{N(N-1)} \sum_{\text{k}=1}^\text{N} (x_\text{k} - \overline{x})^2} \ .
+	\label{eqn:std}
+\end{equation}
+
+\subsubsection{Gauß'sche Fehlerfortpflanzung}
+Wenn $x_\text{1}, ..., x_\text{n}$ fehlerbehaftete Messgrößen im weiteren Verlauf benutzt werden, wird der neue Fehler $\Delta f$ mit Hilfe der Gaußschen Fehlerfortpflanzung angegeben.
+\begin{equation}
+	\Delta f = \sqrt{\sum_{\text{k}=1}^\text{N} \left( \frac{ \partial f}{\partial x_\text{k}} \right) ^2 \cdot (\Delta x_\text{k})^2}
+	\label{eqn:var}
+\end{equation}

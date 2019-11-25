@@ -1,0 +1,243 @@
+\newpage
+\section{Auswertung}
+\label{sec:Auswertung}
+Im folgenden wird die Hysteresekurve des verwendeten Magneten bestimmt und aus der Verschiebung der Wellenlänge, die Landé-Faktoren berechnet.
+
+\subsection{Hysteresekurve}
+In Abbildung \eqref{fig:Hysterese} ist die Hysteresekurve des verwendeten Magneten zu sehen. Die zugehörigen Messwerte sind in Tabelle \eqref{tab:Hysterese} aufgetragen. Der Fit wurde mit der folgenden Funktion
+\begin{align*}
+  B(I) = a\cdot \arctan(b\cdot I + c) + d
+\end{align*}
+durchgeführt. Dafür muss zwischen aufsteigendem Feldstrom $I_\text{auf}$ und absteigendem Feldstrom $I_\text{ab}$ unterschieden werden. Die daraus folgenden Parameter sind in Tabelle \eqref{tab:Parameter} aufgetragen.
+
+\begin{table}[H] %Fitparameter: Hysteresekurve
+  \centering
+  \caption{Die Parameter für den Fit der Hysteresekurve.}
+  \label{tab:Parameter}
+  \begin{tabular}{c|c|c|c|c}
+    & a & b & c & d \\
+    \hline
+    $I_\text{auf}$ & $\num{830 +- 50}$ & $\num{0.077 +- 0.005}$ & $\num{-0.50 +- 0.06}$ & $\num{400 +- 20}$ \\
+    $I_\text{ab}$ & $\num{800 +- 50}$ & $\num{0.081 +- 0.005}$ & $\num{-0.54 +- 0.06}$ & $\num{400 +- 20}$ \\
+  \end{tabular}
+\end{table}
+
+Aus der Abbildung \eqref{fig:Hysterese} und den Parametern aus Tabelle \eqref{tab:Parameter} wird deutlich, dass der verwendete Magnet eine geringe Remanenz aufweist.
+
+\begin{figure}[H] %Diagramm: Hysteresekurve
+  \centering
+  \includegraphics[width=1.3\linewidth, angle=90]{Bilder/Hysterese.pdf}
+  \caption{Die Hysteresekurve des verwendeten Magneten.}
+  \label{fig:Hysterese}
+\end{figure}
+
+\begin{table}[H] %Messwerte: Hysteresekurve
+  \centering
+  \caption{Messwerte für die Hysteresekurve des verwendeten Magneten.}
+  \label{tab:Hysterese}
+  \begin{tabular}{c | c c}
+    I / A & $B_\text{hoch}$ / mT & $B_\text{runter}$ / mT \\
+    \hline
+    0 & 4 & 7 \\
+    1 & 61 & 58 \\
+    2 & 119 & 129 \\
+    3 & 178 & 182 \\
+    4 & 245 & 244 \\
+    5 & 300 & 303 \\
+    6 & 374 & 371 \\
+    7 & 427 & 432 \\
+    8 & 488 & 496 \\
+    9 & 549 & 562 \\
+    10 & 600 & 600 \\
+    11 & 666 & 678 \\
+    12 & 732 & 734 \\
+    13 & 790 & 791 \\
+    14 & 835 & 849 \\
+    15 & 879 & 893 \\
+    16 & 935 & 935 \\
+    17 & 968 & 975 \\
+    18 & 999 & 1004 \\
+    19 & 1030 & 1036 \\
+    20 & 1057 & 1057 \\
+  \end{tabular}
+\end{table}
+
+Es ist eine Verschiebung der Kurve zu erkennen, allerdings sind mehrere Messwerte ohne eine Verschiebung dabei. Das kann durch die Ablesefehler des Feldstroms $I$ erklärt werden.
+\begin{align*}
+  \Delta I = 0.25\, \text{A}
+\end{align*}
+Die Fehler kommen durch die analoge Anzeige zustande. Im folgenden wird der Fehler des B-Feldes auf 5\,\% geschätzt.
+
+
+\subsection{Dispersionsgebiet}
+Das Dispersionsgebiet gibt die maximale Wellenlängendifferenz an, die zwei Wellen haben dürfen ohne sich zu überlagern. Sie wird mit
+\begin{align}
+  \Delta\lambda_\text{D} = \frac{\lambda^2}{2\cdot d} \cdot \sqrt{\frac{1}{n^2 - 1}}
+  \label{eqn:Dispersionsgebiet}
+\end{align}
+berechnet. $\lambda$ entspricht dabei der Wellenlänge der verwendeten Spektrallinie und $n$ der Brechzahl. Die Dicke der Lummer-Gehrcke Platte $d$ beträgt 4\,mm. Die Brechzahlen und Wellenlängen der roten und blauen Spektrallinie sind \cite{V27}:
+\begin{align*}
+  \lambda_\text{rot} &= 643.8\,\text{nm} \\
+  n_\text{rot} &= 1.4567 \\
+  \lambda_\text{blau} &= 480.0\,\text{nm} \\
+  n_\text{blau} &= 1.4635 \\
+\end{align*}
+Mit diesen Werten und der Formel \eqref{eqn:Dispersionsgebiet} ergeben sich folgende Dispersionsgebiete:
+\begin{align*}
+  \Delta\lambda_\text{D,rot} &= 0.0489\,\text{nm}\ , \\
+  \Delta\lambda_\text{D,blau} &= 0.0270\,\text{nm}\ .
+\end{align*}
+
+\subsection{Wellenlängenänderung}
+Die Wellenlängenänderung $\delta\lambda$ lässt sich mit
+\begin{align}
+  \delta\lambda = \frac{\delta\text{s}}{2\,\Delta\text{s}}\cdot \Delta\lambda_\text{D}
+  \label{eqn:Verschiebung}
+\end{align}
+berechnen. $\Delta$s ist dabei der Abstand zwischen zwei Linien ohne ein äußeres B-Feld. $\delta$s ist der Abstand zwischen den aufgespaltenen Linien durch ein äußeres B-Feld. \\
+Um den Abstand zwischen zwei Linien bestimmen zu können, müssen die Intensitätsmaxima der einzelnen Linien bestimmt werden. Dazu werden die Pixelwerte der Linien aus den Bildern abgelesen.
+
+
+
+\subsubsection{Verschiebung der roten Linie}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.8\linewidth]{Bilder/RoB.JPG}
+  \caption{Die rote Linie der Cd-Lampe ohne ein äußeres B-Feld.}
+  \label{fig:RoB}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.8\linewidth]{Bilder/R9ASig.JPG}
+  \caption{Die $\sigma$-Komponente der roten Linie der Cd-Lampe mit einem äußeren B-Feld ($B_{\sigma,\text{rot}} = (\num{0.55 +- 0.03})$\,T).}
+  \label{fig:R9ASig}
+\end{figure}
+
+Die Werte für die Tabelle \eqref{tab:rot} werden aus den Abbildungen \eqref{fig:RoB} und \eqref{fig:R9ASig} bestimmt.
+
+\begin{table}[H]
+  \centering
+  \caption{Messwerte für die Berechnung der Verschiebung der roten Linie.}
+  \label{tab:rot}
+  \begin{tabular}{c c c}
+    $\Delta$s / Pixel & $\delta$s$_{\sigma}$ / Pixel & $\delta \lambda_{\sigma}$ / pm \\
+    \hline
+    244.0 & 123.0 & 12.33 \\
+    240.0 & 106.3 & 10.84 \\
+    226.0 & 108.0 & 11.69 \\
+    220.0 & 106.7 & 11.86 \\
+    213.0 & 101.3 & 11.63 \\
+    206.0 & 95.7  & 11.36 \\
+    201.0 & 97.7  & 11.88 \\
+    193.0 & 93.0  & 11.78 \\
+    188.0 & 91.0  & 11.84 \\
+    191.0 & 84.7  & 10.84 \\
+    \hline
+  \end{tabular}
+\end{table}
+
+Mit Hilfe der Formel \eqref{eqn:Verschiebung}, des Dispersionsgebietes $\Delta\lambda_\text{D,rot}$ und der Tabelle \eqref{tab:rot}, ergibt sich nach der Bestimmung des Mittelwertes folgender Wert für die Verschiebung $\delta\lambda$:
+\begin{align*}
+  \delta \lambda_{\sigma,\text{rot}} = (\num{11.6 +- 0.4})\,\text{pm} \\
+\end{align*}
+
+
+
+\subsubsection{Verschiebung der blauen Linie}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.8\linewidth]{Bilder/BoB.JPG}
+  \caption{Die blaue Linie der Cd-Lampe ohne ein äußeres B-Feld.}
+  \label{fig:BoB}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.8\linewidth]{Bilder/B6ASig.JPG}
+  \caption{Die $\sigma$-Komponente der blauen Linie der Cd-Lampe mit einem äußeren B-Feld ($B_{\sigma,\text{blau}} = (\num{0.30 +- 0.02})$\,T).}
+  \label{fig:B6ASig}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.8\linewidth]{Bilder/B20APi.JPG}
+  \caption{Die $\pi$-Komponente der blauen Linie der Cd-Lampe mit einem äußeren B-Feld ($B_{\pi,\text{blau}} = (\num{1.06 +- 0.05})$\,T).}
+  \label{fig:B20APi}
+\end{figure}
+
+Die Werte für die Tabelle \eqref{tab:blau} werden aus den Abbildungen \eqref{fig:BoB} bis \eqref{fig:B20APi} bestimmt.
+
+\begin{table}[H]
+  \centering
+  \caption{Messwerte für die Berechnung der Verschiebung der blauen Linie.}
+  \label{tab:blau}
+  \begin{tabular}{c | c c | c c}
+    $\Delta$s / Pixel & $\delta$s$_{\sigma}$ / Pixel & $\delta \lambda_{\sigma}$ / pm & $\delta$s$_{\pi}$ / Pixel & $\delta \lambda_{\pi}$ / pm \\
+    \hline
+    132.7 & 62.7 & 6.37 & 62.0 & 12.33 \\
+    135.3 & 56.0 & 5.58 & 65.3 & 10.84 \\
+    134.0 & 57.3 & 5.77 & 66.0 & 11.69 \\
+    128.7 & 58.7 & 6.14 & 65.3 & 11.86 \\
+    130.7 & 55.3 & 5.71 & 61.3 & 11.63 \\
+    124.7 & 54.0 & 5.84 & 63.3 & 11.36 \\
+    123.3 & 55.3 & 6.05 & 54.0 & 11.88 \\
+    122.0 & 52.0 & 5.74 & 57.3 & 11.78 \\
+    122.0 & 51.3 & 5.67 & 56.0 & 11.84 \\
+    122.0 & 54.7 & 6.04 & 54.0 & 10.84 \\
+    \hline
+  \end{tabular}
+\end{table}
+
+Mit Hilfe der Formel \eqref{eqn:Verschiebung}, des Dispersionsgebietes $\Delta\lambda_\text{D,blau}$ und der Tabelle \eqref{tab:blau}, ergeben sich nach der Bestimmung der Mittelwerte folgende Werte für die Verschiebung $\delta\lambda$\,:
+\begin{align*}
+  \delta \lambda_{\sigma,blau} = (\num{5.9 +- 0.2})\,\text{pm} \\
+  \delta \lambda_{\pi,blau} = (\num{6.4 +- 0.3})\,\text{pm}
+\end{align*}
+
+
+
+\subsection{Landé-Faktoren}
+Die Landé-Faktoren $g_\text{ij}$ können nach Umstellen der Formel \eqref{eqn:dE} bestimmt werden.
+\begin{align}
+  g_{ij} = m_1\,g_1 - m_2\,g_2 = \frac{\Delta E}{\mu_\text{B}\,B}
+\end{align}
+Dabei ist das Bohrsche Magneton gegeben durch $\mu_\text{B} = 9.274 \cdot 10^{-24}\,\frac{\text{J}}{\text{T}}$ \cite{const}.\\
+Die Energiedifferenz kann über
+\begin{align}
+  |\Delta E| \approx \left| \frac{\partial E}{\partial \lambda}\right| \cdot |\delta\lambda| = \frac{h\,c}{\lambda^2}\cdot \delta\lambda
+\end{align}
+berechnet werden. In der Berechnung ist berücksichtigt, dass sich $\Delta E$ nicht linear mit $\lambda$ ändert. Damit ergibt sich für die Landé-Faktoren $g_{ij}$:
+\begin{align}
+  g_{ij} = \frac{h\,c}{\mu_\text{B}}\,\frac{\delta\lambda}{B\,\lambda^2}
+  \label{eqn:Landé}
+\end{align}
+
+
+
+\subsubsection{Landé-Faktoren der roten Linie}
+Aufgrund eines verschwindenen Gesamtspins $S = 0$, handelt es sich um den normalen Zeemaneffekt, sodass der Landefaktor $g_{\text{theo},\sigma,\text{rot}} = 1$ ist. Für die Messung wird ein B-Feld von
+\begin{align*}
+  B_{\sigma,\text{rot}} = (\num{0.55 +- 0.03})\,\text{T} \ .
+\end{align*}
+angelegt. Der experimentelle Landé-Faktor wird mit Formel \eqref{eqn:Landé} zu
+\begin{align*}
+  g_{\text{exp},\sigma,\text{rot}} = \frac{h\,c}{\mu_\text{B}}\,\frac{\delta \lambda_{\sigma,\text{rot}}}{B_{\sigma,\text{rot}}\,\lambda_\text{rot}^2} = \num{1.09 +- 0.07}
+\end{align*}
+berechnet.
+
+
+
+\subsubsection{Landé-Faktoren der blauen Linie}
+Die theoretischen Landé-Faktoren der blauen Linie können mit Formel \eqref{eqn:Lan} bestimmt werden. Damit ergibt sich ein Landé-Faktor der $\pi$-Komponente $g_{\text{theo},\pi,\text{blau}} = 0.5$. Für die $\sigma$-Komponente ergeben sich $g_{\text{theo},\sigma,\text{blau},1} = 1.5$ und $g_{\text{theo},\sigma,\text{blau},2} = 2.0$. Allerdings ist das Auflösungsvermögen der verwendeten Lummer-Gehrcke-Platte zu gering. Deshalb kann nur eine Überlagerung der beiden Linien erkannt werden. Deswegen wird der Landé-Faktor zu $g_{\text{theo},\sigma,\text{blau}} = 1.75$ gemittelt.
+Für die Messungen werden die B-Felder
+\begin{align*}
+  B_{\sigma,\text{blau}} = (\num{0.3 +- 0.02})\, \text{T}\ , \\
+  B_{\pi,\text{blau}} = (\num{1.06 +- 0.05})\, \text{T}\ .
+\end{align*}
+angelegt. Die experimentellen Landé-Faktoren werden zu
+\begin{align*}
+  g_{\text{exp},\sigma,\text{blau}} &= \frac{h\,c}{\mu_\text{B}}\,\frac{\delta \lambda_{\sigma,\text{blau}}}{B_{\sigma,\text{blau}}\,\lambda_\text{blau}^2} = \num{1.8 +- 0.1} \\
+  g_{\text{exp},\pi,\text{blau}} &= \frac{h\,c}{\mu_\text{B}}\,\frac{\delta \lambda_{\pi,\text{blau}}}{B_{\pi,\text{blau}}\,\lambda_\text{blau}^2} = \num{0.56 +- 0.04}
+\end{align*}
+bestimmt.
